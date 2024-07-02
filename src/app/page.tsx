@@ -2,7 +2,7 @@ import CardFrame from '@/components/card/card-frame';
 
 export default function Home() {
   return (
-    <div className='gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+    <div className='gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-text-gray'>
       <CardFrame className='text-lg h-[385px]'>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam
         incidunt id ea aperiam officia inventore dicta iusto quibusdam modi
