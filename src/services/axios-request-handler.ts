@@ -25,7 +25,6 @@ export const GET = async (
         }
       })
       .catch((error: Error) => {
-        console.error(error);
         reject(error);
       });
   });
@@ -57,7 +56,6 @@ export const POST = async (
         }
       })
       .catch((error: Error) => {
-        console.error('response error', error);
         reject(error);
       });
   });
@@ -88,7 +86,6 @@ export const PUT = async (
         }
       })
       .catch((error: Error) => {
-        console.error({ error });
         reject(error);
       });
   });

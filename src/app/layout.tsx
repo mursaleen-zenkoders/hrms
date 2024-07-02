@@ -3,6 +3,8 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from '@/providers';
+import Sidebar from '@/components/sidebar/sidebar';
+import Navbar from '@/components/navbar/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +21,15 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className='p-5 flex flex-col gap-5'>
+            <Navbar />
+            <div className='flex gap-5 h-[84dvh]'>
+              <Sidebar />
+              <div className='overflow-y-auto h-full w-full'>{children}</div>
+            </div>
+          </div>
+        </Providers>
       </body>
     </html>
   );

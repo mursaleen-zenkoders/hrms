@@ -3,3 +3,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-transition {
+    width: 60px;
+    transition: 0.5s;
+    border-radius: 100px;
+}
+
+.custom-transition:hover {
+    width: 200px;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #1E1E1E;
+    color: #EFEFEF;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #EFEFEF;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 3px;
+}
