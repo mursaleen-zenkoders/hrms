@@ -22,9 +22,8 @@ const Tab = ({ icon, name, link }: IProps) => {
         src={icon}
         width={24}
         height={24}
-        color='#EFEFEF'
       />
-      <h1 className=''>{name}</h1>
+      <h1>{name}</h1>
     </Link>
   );
 };

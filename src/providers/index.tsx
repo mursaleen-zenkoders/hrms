@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import ReactQueryProvider from './react-query-provider';
 import { ToasterProvider } from './toaster-provider';

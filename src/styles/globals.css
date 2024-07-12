@@ -13,6 +13,7 @@
 .custom-transition:hover {
     width: 200px;
     border-radius: 10px;
+    padding-right: 50px !important;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #EFEFEF;
+    background: #1E1E1E;
     border-radius: 4px;
     cursor: pointer;
 }

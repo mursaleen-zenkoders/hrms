@@ -1,25 +1,28 @@
-// import type { NextRequest } from "next/server";
+import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-export function middleware() {
-  // const token = req.cookies.get("accessToken")?.value;
+export function middleware(req: NextRequest) {
+  const token = req.cookies.get(
+    '__Secure-next-auth.session-token' || 'next-auth.session-token',
+  )?.value;
 
-  // const { pathname } = req.nextUrl.clone();
+  const { pathname } = req.nextUrl.clone();
 
-  // if (pathname === "/") {
-  //   return NextResponse.redirect(new URL("/home", req.url));
-  // }
-  // const publicRoutes = ["/login", "/signup"];
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL('/dashboard', req.url));
+  }
 
-  // const protectedRoutes = ["/"];
+  const publicRoutes = ['/login'];
 
-  // if (token && publicRoutes.includes(pathname)) {
-  //   return NextResponse.redirect(new URL("/", req.url));
-  // }
+  const protectedRoutes = ['/', '/dashboard'];
 
-  // if (!token && protectedRoutes.includes(pathname)) {
-  //   return NextResponse.redirect(new URL("/login", req.url));
-  // }
+  if (token && publicRoutes.includes(pathname)) {
+    return NextResponse.redirect(new URL('/', req.url));
+  }
+
+  if (!token && protectedRoutes.includes(pathname)) {
+    return NextResponse.redirect(new URL('/login', req.url));
+  }
 
   return NextResponse.next();
 }

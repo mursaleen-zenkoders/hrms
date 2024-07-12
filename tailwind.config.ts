@@ -5,6 +5,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -14,9 +15,10 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'light-black': '#1E1E1E',
-        'light-gray': '#EFEFEF',
+        'bg-color': '#1E1E1E',
+        'light-gray': '#F8F8F8',
         'card-black': '#161616',
+        'text-gray': '#A8A8A8',
       },
     },
   },
