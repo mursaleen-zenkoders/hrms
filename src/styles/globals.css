@@ -13,6 +13,7 @@
 .custom-transition:hover {
     width: 200px;
     border-radius: 10px;
+    padding-right: 50px !important;
 }
 
 body {
