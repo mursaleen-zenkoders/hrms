@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest) {
   const token = req.cookies.get(
-    'next-auth.session-token' || '__Secure-next-auth.session-token',
+    '__Secure-next-auth.session-token' || 'next-auth.session-token',
   )?.value;
 
   const { pathname } = req.nextUrl.clone();
