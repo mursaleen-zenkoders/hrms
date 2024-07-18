@@ -8,22 +8,38 @@ interface IProps {
   name: string;
   icon: string;
   link: string;
+  coloredIcon?: string;
+  isHover?: boolean;
 }
 
-const Tab = ({ icon, name, link }: IProps) => {
+const Tab = ({ icon, name, link, isHover, coloredIcon }: IProps) => {
+  const style = {
+    transition: !isHover ? 'all 0.3s ease-in-out' : 'all 1.5s ease-in-out',
+  };
+
   const path = usePathname();
+  const isActive = path === link;
   return (
     <Link
       href={link || ''}
-      className={`flex cursor-pointer gap-x-3 items-center  ${link == path ? '' : ''}`}
+      style={style}
+      className={`flex cursor-pointer gap-x-3 items-center
+        hover:bg-sidebar-active rounded-md
+        ${isHover && 'py-2 px-3'}
+        ${isHover && isActive && 'text-primary bg-sidebar-active'}`}
     >
       <Image
         alt='dashboard'
-        src={icon}
+        src={isActive ? coloredIcon || '' : icon}
         width={24}
         height={24}
       />
-      <h1>{name}</h1>
+      <h1
+        className={`${isHover && isActive && 'text-primary'} ${!isHover && 'text-transparent'}`}
+        style={style}
+      >
+        {name}
+      </h1>
     </Link>
   );
 };

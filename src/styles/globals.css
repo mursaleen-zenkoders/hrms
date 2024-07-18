@@ -6,19 +6,18 @@
 
 .custom-transition {
     width: 60px;
-    transition: 0.5s;
-    border-radius: 100px;
+    transition: 1s;
+    border-radius: 10px;
 }
 
 .custom-transition:hover {
-    width: 200px;
-    border-radius: 10px;
+    width: 240px;
     padding-right: 50px !important;
 }
 
 body {
     background-color: #1E1E1E;
-    color: #EFEFEF;
+    color: #9EA9AA;
 }
 
 ::-webkit-scrollbar {
