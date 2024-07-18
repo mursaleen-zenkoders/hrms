@@ -1,18 +1,31 @@
 'use client';
+
 // Assets
-import DashboardIcon from '@/../public/assets/icons/dashboard.svg';
 import LogoutIcon from '@/../public/assets/icons/logout.svg';
+import LOGO from '@/../public/assets/images/logo.png';
+import FullLogo from '@/../public/assets/images/Sidebar logo.svg';
 
 // Utilities
 import { cn } from '@/lib/utils';
 
-// Components
+// Next Auth
 import { signOut, useSession } from 'next-auth/react';
+
+// Next && React
 import Image from 'next/image';
+import { useState } from 'react';
+
+// Component
 import Tab from './tab';
+
+// Constants
+import { tabs } from '@/constant/sidebar';
 
 const Sidebar = () => {
   const { data: session } = useSession();
+
+  const [onHover, setOnHover] = useState(false);
+
   return (
     <div
       className={cn(
@@ -20,29 +33,47 @@ const Sidebar = () => {
         '!h-full',
         'custom-transition',
         'flex flex-col justify-between',
-        'bg-card-black text-transparent hover:text-text-gray text-base',
+        'bg-card-black',
       )}
+      onFocus={() => {}}
+      onMouseOver={() => setOnHover(true)}
+      onMouseLeave={() => setOnHover(false)}
     >
-      <div className='space-y-6'>
-        {/* Dashboard */}
-        <Tab
-          icon={DashboardIcon}
-          name='Dashboard'
-          link='/'
-        />
+      <Image
+        alt='logo'
+        src={onHover ? FullLogo : LOGO}
+        width={onHover ? 153 : 28}
+        height={28}
+      />
+
+      <div
+        className={`space-y-6 w-full ${onHover && 'min-w-[190px]'} text-base`}
+      >
+        {tabs.map((item, index) => (
+          <Tab
+            isHover={onHover}
+            key={index}
+            {...item}
+          />
+        ))}
       </div>
 
       {session && (
         <button
-          className={`flex cursor-pointer gap-x-3 items-center `}
+          className={`flex cursor-pointer gap-x-3 items-center hover:bg-sidebar-active rounded-md  ${onHover && 'py-2 px-3 min-w-[190px]'}`}
           onClick={() => signOut()}
+          style={{
+            color: onHover ? '#9EA9AA' : 'transparent',
+            transition: !onHover
+              ? 'all 0.3s ease-in-out'
+              : 'all 1s ease-in-out',
+          }}
         >
           <Image
             alt='dashboard'
             src={LogoutIcon}
             width={24}
             height={24}
-            color='#EFEFEF'
           />
           <h1>Logout</h1>
         </button>
