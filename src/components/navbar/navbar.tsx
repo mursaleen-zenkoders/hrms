@@ -4,20 +4,21 @@ import { signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import CardFrame from '../card/card-frame';
 
-const Navbar = () => {
+const Navbar = ({ heading }: { heading?: string }) => {
   const { data } = useSession();
   return (
-    <CardFrame className='text-lg flex justify-between items-center !py-3'>
-      <p className='text-text-gray font-semibold text-xl'>Zenkoders</p>
+    <CardFrame className='text-lg flex justify-between items-center !py-3 sticky top-0 z-50'>
+      <p className='font-bold text-base md:text-2xl'>
+        {heading ? heading : 'Zenkoders'}
+      </p>
       {data ? (
         <div className='flex gap-x-3 items-center'>
-          <p className='text-base text-text-gray'>{data?.user?.name}</p>
           <Image
             alt={data?.user?.name || ''}
             src={data?.user?.image || ''}
             width={40}
             height={40}
-            className='rounded-full'
+            className='rounded-full w-[34px] h-[34px] md:w-[50px] md:h-[50px]'
           />
         </div>
       ) : (

@@ -3,11 +3,13 @@ import React from 'react';
 interface IProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const CardFrame = ({ children, className }: IProps) => {
+const CardFrame = ({ children, className, style }: IProps) => {
   return (
     <div
+      style={style}
       className={`bg-card-black p-6 rounded-xl overflow-y-auto ${className}`}
     >
       {children}
