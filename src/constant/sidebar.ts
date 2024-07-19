@@ -1,15 +1,15 @@
 // ============== Icons ==============
 import DashboardIcon from '@/../public/assets/icons/dashboard.svg';
-import AnnouncementsIcon from '@/../public/assets/icons/Announcements.svg';
-import LeavesIcon from '@/../public/assets/icons/Leaves.svg';
-import StandupIcon from '@/../public/assets/icons/Leaves.svg';
+import BellsIcon from '@/../public/assets/icons/bell.svg';
+import LeavesIcon from '@/../public/assets/icons/leaves.svg';
+import StandupIcon from '@/../public/assets/icons/leaves.svg';
 import AttendanceIcon from '@/../public/assets/icons/attendance.svg';
 
 // ============== Colored Icons ==============
 import DashboardColoredIcon from '@/../public/assets/icons/dashboard-colored.svg';
-import AnnouncementsColoredIcon from '@/../public/assets/icons/announcements-colored.svg';
-import LeavesColoredIcon from '@/../public/assets/icons/Leaves-colored.svg';
-import StandupColoredIcon from '@/../public/assets/icons/Leaves-colored.svg';
+import BellColoredIcon from '@/../public/assets/icons/bell-colored.svg';
+import LeavesColoredIcon from '@/../public/assets/icons/leaves-colored.svg';
+import StandupColoredIcon from '@/../public/assets/icons/leaves-colored.svg';
 import AttendanceColoredIcon from '@/../public/assets/icons/attendance-colored.svg';
 
 export const tabs = [
@@ -22,8 +22,8 @@ export const tabs = [
   {
     name: 'Announcements',
     link: '/dashboard/announcements',
-    icon: AnnouncementsIcon,
-    coloredIcon: AnnouncementsColoredIcon,
+    icon: BellsIcon,
+    coloredIcon: BellColoredIcon,
   },
   {
     name: 'Attendance',
