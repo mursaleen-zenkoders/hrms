@@ -1,12 +1,7 @@
-import LoadingView from '@/components/LoadingView';
-import React from 'react';
+import AnnouncementsView from '@/view/announcement';
 
 const Page = () => {
-  return (
-    <div>
-      <LoadingView />
-    </div>
-  );
+  return <AnnouncementsView />;
 };
 
 export default Page;

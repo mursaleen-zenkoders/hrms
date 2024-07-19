@@ -15,7 +15,7 @@ import AttendanceColoredIcon from '@/../public/assets/icons/attendance-colored.s
 export const tabs = [
   {
     name: 'Dashboard',
-    link: '/dashboard',
+    link: '/dashboard/home',
     icon: DashboardIcon,
     coloredIcon: DashboardColoredIcon,
   },

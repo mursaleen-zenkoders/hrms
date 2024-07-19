@@ -14,14 +14,15 @@ interface IProps {
 
 const Tab = ({ icon, name, link, isHover, coloredIcon }: IProps) => {
   const style = {
-    transition: !isHover ? 'all 0.3s ease-in-out' : 'all 1.5s ease-in-out',
+    transition: !isHover ? 'all 0.3s ease-in-out' : 'all 0.5s ease-in-out',
   };
 
   const path = usePathname();
-  const isActive = path === link;
+  const isActive = path.includes(link);
+
   return (
     <Link
-      href={link || ''}
+      href={link}
       style={style}
       className={`flex cursor-pointer gap-x-3 items-center
         hover:bg-sidebar-active rounded-md

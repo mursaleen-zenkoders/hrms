@@ -32,12 +32,14 @@ export default async function RootLayout({
   const session = await getServerSession();
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={(inter.className, 'bg-bg-gradient')}>
         <Providers>
-          <div className='p-5 flex flex-col h-screen gap-5'>
+          <div className='p-5 flex flex-col gap-5 relative overflow-hidden'>
             <SessionProvider session={session}>
               {/* <Navbar /> */}
               <div className='h-full w-full'>{children}</div>
+              {/* <div className='absolute w-96 h-96 -z-50 bg-bg-gradient -top-20 -left-20 blur-xl rounded-full' />
+              <div className='absolute w-96 h-96 -z-50 bg-bg-gradient bottom-0 right-0 blur-xl rounded-full' /> */}
             </SessionProvider>
           </div>
         </Providers>

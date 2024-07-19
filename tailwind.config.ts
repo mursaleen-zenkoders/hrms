@@ -13,6 +13,9 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'bg-gradient':
+          'radial-gradient(circle, rgba(30,30,30,1) 0%, rgba(248,248,248,0.02) 50%, rgba(30,30,30,1) 100%)',
+        'bg-speaker': "url('/assets/icons/speaker.png')",
       },
       colors: {
         'bg-color': '#1E1E1E',

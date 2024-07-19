@@ -32,7 +32,7 @@ const Sidebar = () => {
         'p-4 hover:p-6',
         '!h-full',
         'custom-transition',
-        'flex flex-col justify-between',
+        'hidden md:flex flex-col justify-between',
         'bg-card-black',
       )}
       onFocus={() => {}}
