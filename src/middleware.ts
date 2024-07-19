@@ -2,9 +2,12 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest) {
-  const token = req.cookies.get(
-    '__Secure-next-auth.session-token' || 'next-auth.session-token',
+  const token = req.cookies.get('next-auth.session-token')?.value;
+  const tokenProduction = req.cookies.get(
+    '__Secure-next-auth.session-token',
   )?.value;
+
+  const isToken = token || tokenProduction;
 
   const { pathname } = req.nextUrl.clone();
 
@@ -16,11 +19,11 @@ export function middleware(req: NextRequest) {
 
   const protectedRoutes = ['/', '/dashboard'];
 
-  if (token && publicRoutes.includes(pathname)) {
+  if (isToken && publicRoutes.includes(pathname)) {
     return NextResponse.redirect(new URL('/', req.url));
   }
 
-  if (!token && protectedRoutes.includes(pathname)) {
+  if (!isToken && protectedRoutes.includes(pathname)) {
     return NextResponse.redirect(new URL('/login', req.url));
   }
 
