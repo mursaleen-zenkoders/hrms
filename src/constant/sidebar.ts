@@ -35,12 +35,12 @@ export const tabs = [
     name: 'Leaves',
     link: '/dashboard/leaves',
     icon: LeavesIcon,
-    coloredIcon: StandupColoredIcon,
+    coloredIcon: AttendanceColoredIcon,
   },
   {
     name: 'Standup',
     link: '/dashboard/standup',
     icon: StandupIcon,
-    coloredIcon: AttendanceColoredIcon,
+    coloredIcon: StandupColoredIcon,
   },
 ];

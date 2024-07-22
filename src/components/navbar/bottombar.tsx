@@ -15,7 +15,7 @@ import { tabs } from '@/constant/sidebar';
 const BottomBar = () => {
   const path = usePathname();
   return (
-    <CardFrame className='max-h-[20px] justify-between sticky bottom-5 md:hidden flex'>
+    <CardFrame className='max-h-[20px] justify-between sticky bottom-0 md:hidden flex'>
       {tabs.map((tab, index) => {
         const isActive = path.includes(tab.link);
         return (

@@ -18,7 +18,10 @@ import location from '@/../public/assets/icons/location.png';
 const AnnouncementView = () => {
   return (
     <div className='space-y-3 h-full'>
-      <Navbar heading='Announcement' />
+      <Navbar
+        heading='Announcement'
+        isBackBtn
+      />
       <CardFrameTwo className={`h-[89%] overflow-y-auto space-y-5`}>
         <div className='flex justify-between items-center'>
           <Image

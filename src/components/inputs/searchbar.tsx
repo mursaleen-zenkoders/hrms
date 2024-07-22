@@ -37,7 +37,7 @@ const SearchInput: FC<ISearchInput> = ({
         />
         <IoSearchOutline
           size={24}
-          color='#828282'
+          color='#21AB70'
         />
       </div>
     </div>

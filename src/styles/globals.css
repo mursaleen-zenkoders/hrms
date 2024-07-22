@@ -40,3 +40,72 @@ body {
 ::-webkit-scrollbar:horizontal {
     height: 3px;
 }
+
+
+
+/* quill editor styling */
+.quill>* {
+    border-color: inherit !important;
+    color: inherit !important;
+}
+
+.quill>.ql-toolbar {
+    /* border radius of the toolbar */
+    border-radius: 10px 10px 0 0;
+}
+
+.quill>.ql-container {
+    /* border radius of the container and for font size*/
+    font-size: inherit;
+    border-radius: 0 0 10px 10px;
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+    color: inherit !important;
+    opacity: 0.76;
+}
+
+.ql-snow .ql-picker {
+    color: inherit !important;
+}
+
+.quill>.ql-container>.ql-editor.ql-blank::before {
+    /* for placeholder */
+    color: inherit;
+}
+
+.ql-snow.ql-toolbar button svg {
+    opacity: 0.76;
+    color: currentColor;
+}
+
+.ql-snow.ql-toolbar button:hover,
+.ql-snow.ql-toolbar button.ql-active {
+    opacity: 0.76;
+    color: #21AB70 !important;
+}
+
+.ql-snow .ql-stroke {
+    /* for the border of the editor */
+    stroke: currentColor !important;
+}
+
+.ql-snow .ql-fill {
+    /* for the bg color */
+    fill: currentColor !important;
+}
+
+.ql-picker-item {
+    /* for dropdown */
+    color: black !important;
+
+}
+
+.ql-picker-options {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}

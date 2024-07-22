@@ -4,7 +4,7 @@ import 'react-responsive-pagination/themes/classic.css';
 
 interface IProps {
   currentPage: number;
-  setCurrentPage: (_page: number) => void;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   totalPages: number;
 }
 
