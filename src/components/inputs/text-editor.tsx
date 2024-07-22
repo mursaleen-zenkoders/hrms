@@ -44,7 +44,7 @@ const TextEditor = ({ label, onChange, value }: IProps) => {
   ];
 
   return (
-    <div className='space-y-1 h-full xl:min-h-[380px]'>
+    <div className='space-y-1 h-full xl:max-h-[380px]'>
       <p>{label}</p>
       <ReactQuill
         placeholder='Type here...'

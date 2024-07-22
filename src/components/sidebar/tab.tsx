@@ -36,7 +36,7 @@ const Tab = ({ icon, name, link, isHover, coloredIcon }: IProps) => {
         height={24}
       />
       <h1
-        className={`${isHover && isActive && 'text-primary'} ${!isHover && 'text-transparent'}`}
+        className={`${isHover && isActive && 'text-primary font-medium'} ${!isHover && 'text-transparent'}`}
         style={style}
       >
         {name}

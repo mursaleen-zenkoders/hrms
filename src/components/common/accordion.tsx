@@ -24,8 +24,6 @@ const Accordion = ({ content: answer, date, day }: IProps) => {
 
   return (
     <div
-      onMouseEnter={() => setIsCollapse(true)}
-      onMouseLeave={() => setIsCollapse(false)}
       className={`border rounded-lg border-light-gray overflow-hidden
          ${isCollapse ? '!border-primary min-h-[100px] max-h-fit' : 'max-h-[50px] min-h-[50px]'}
         transition-all duration-1000 ease-in-out
@@ -51,12 +49,14 @@ const Accordion = ({ content: answer, date, day }: IProps) => {
               onClick={() => setIsCollapse(!isCollapse)}
               size={20}
               color='#21AB70'
+              className='cursor-pointer'
             />
           ) : (
             <IoIosArrowUp
               onClick={() => setIsCollapse(!isCollapse)}
               size={20}
               color='#21AB70'
+              className='cursor-pointer'
             />
           )}
         </div>
