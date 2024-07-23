@@ -9,7 +9,7 @@ import Button from '@/components/common/button';
 import TextEditor from '@/components/inputs/text-editor';
 
 // REACT & NEXT IMPORTS
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 // ICONS
@@ -34,23 +34,33 @@ const StandUpView = () => {
   });
 
   const { values, handleChange, handleSubmit } = formik;
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   return (
     <div className='xl:max-h-[84dvh] h-full space-y-4 '>
       <Navbar heading='Standup' />
       <div className='grid xl:grid-cols-3 gap-5 h-fit xl:h-full'>
         {/* Section 1 */}
-        <CardFrameTwo className='xl:col-span-2 space-y-3 h-fit xl:h-full overscroll-none order-2 xl:order-1'>
-          <div className='flex flex-col sm:flex-row w-full gap-3'>
-            <SearchInput className='w-full' />
-            <DatePicker />
+        <CardFrameTwo className='xl:col-span-2 space-y-3 h-fit xl:h-full overscroll-none order-2 xl:order-1 flex flex-col justify-between'>
+          <div className='space-y-3'>
+            <div className='flex flex-col sm:flex-row w-full gap-3'>
+              <SearchInput className='w-full' />
+              <DatePicker />
+            </div>
+            {accordionData.map((item, index) => (
+              <Accordion
+                key={index}
+                {...item}
+                isExpendAll={isCollapsed}
+              />
+            ))}
           </div>
-          {accordionData.map((item, index) => (
-            <Accordion
-              key={index}
-              {...item}
+          <div className='flex gap-x-3'>
+            <Button
+              text={isCollapsed ? 'Expend All' : 'Collapse All'}
+              onClick={() => setIsCollapsed(!isCollapsed)}
             />
-          ))}
+          </div>
         </CardFrameTwo>
 
         {/* Section 2 */}

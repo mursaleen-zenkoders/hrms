@@ -20,7 +20,7 @@ const config: Config = {
       colors: {
         'bg-color': '#1E1E1E',
         'light-gray': '#F8F8F8',
-        'card-black': '#161616',
+        'dark-black': '#161616',
         'gray-50': '#9EA9AA',
         'sidebar-active': '#4DF15E14',
         primary: '#21AB70',

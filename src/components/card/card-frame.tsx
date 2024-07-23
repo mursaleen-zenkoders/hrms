@@ -10,7 +10,7 @@ const CardFrame = ({ children, className, style }: IProps) => {
   return (
     <div
       style={style}
-      className={`bg-card-black p-6 rounded-xl overflow-y-auto ${className}`}
+      className={`bg-dark-black p-6 rounded-xl overflow-y-auto ${className}`}
     >
       {children}
     </div>

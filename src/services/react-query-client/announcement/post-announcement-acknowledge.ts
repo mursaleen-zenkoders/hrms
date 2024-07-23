@@ -1,33 +1,29 @@
 // React Query Imports
 import {
   useMutation,
-  useQueryClient,
   UseMutationResult,
+  useQueryClient,
 } from '@tanstack/react-query';
 
 // API & Service Imports
 import { URL } from '@/services/api-base-urls';
 import { POST } from '@/services/axios-request-handler';
 
-// Types Imports
-import { USER_LOGIN_PAYLOAD } from '@/types/types/auth-payload';
-
 // Toast Import
-import toast from 'react-hot-toast';
+// import toast from "react-hot-toast";
 
 // Custom Types Imports
 import { CustomAxiosErrorType } from '@/types/types/shared.types';
+import toast from 'react-hot-toast';
 
 /**
  * React Query hook for user login mutation.
  *
  * @returns {Object} - React Query hook result object.
  */
-export const UserLoginMutationHook = (): UseMutationResult<
-  unknown,
-  Error,
-  USER_LOGIN_PAYLOAD
-> => {
+export const AnnouncementAcknowledgeMutationHook = (
+  id: number,
+): UseMutationResult<unknown, Error, { announcement_id: number }> => {
   const queryClient = useQueryClient();
 
   /**
@@ -39,14 +35,16 @@ export const UserLoginMutationHook = (): UseMutationResult<
    *
    * @throws Will throw an error if the API call fails.
    */
-  const userLoginFn = async (payload: USER_LOGIN_PAYLOAD): Promise<unknown> => {
-    const response = await POST(URL.USER_LOGIN, payload);
+  const AnnouncementAcknowledgeFn = async (): Promise<unknown> => {
+    const response = await POST(URL.POST_ANNOUNCEMENT_ACKNOWLEDGE, {
+      announcement_id: id,
+    });
     return response;
   };
 
   return useMutation({
     // Function that performs the mutation
-    mutationFn: userLoginFn,
+    mutationFn: AnnouncementAcknowledgeFn,
     /**
      * Callback fired when the mutation is successful.
      *
@@ -57,7 +55,7 @@ export const UserLoginMutationHook = (): UseMutationResult<
      * @param context - Additional context provided during the mutation setup (optional).
      */
     onSuccess: (message, variables, context) => {
-      toast.success('Login Successful');
+      toast.success('Announcement Acknowledge Added successfully');
       return {
         message,
         variables,
@@ -66,7 +64,7 @@ export const UserLoginMutationHook = (): UseMutationResult<
     },
     // Callback fired when the mutation encounters an error
     onError: (error: CustomAxiosErrorType) => {
-      toast.error(error?.response?.data?.message ?? 'Login Failed');
+      toast.error(error?.response?.data?.message ?? 'Something went wrong');
 
       return {
         error:
@@ -77,7 +75,12 @@ export const UserLoginMutationHook = (): UseMutationResult<
     // Callback fired when the mutation is settled (whether successful or not)
     onSettled: () => {
       // Invalidate the queries related to pdfVector after login mutation is settled
-      queryClient.invalidateQueries({ queryKey: ['user'] });
+      queryClient.invalidateQueries({
+        queryKey: ['announcement-acknowledges'],
+      });
+      queryClient.invalidateQueries({
+        queryKey: ['all-announcements'],
+      });
     },
   });
 };

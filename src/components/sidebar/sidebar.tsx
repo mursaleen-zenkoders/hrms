@@ -33,7 +33,7 @@ const Sidebar = () => {
         '!h-full',
         'custom-transition',
         'hidden md:flex flex-col justify-between',
-        'bg-card-black',
+        'bg-dark-black',
       )}
       onFocus={() => {}}
       onMouseOver={() => setOnHover(true)}

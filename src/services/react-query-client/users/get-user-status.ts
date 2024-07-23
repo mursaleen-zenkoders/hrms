@@ -35,7 +35,7 @@ export const GetUserStatusQueryHook = (
   ): Promise<unknown> => {
     try {
       // Perform a POST request to get user status
-      const response = await POST(URL.GET_USER, payload);
+      const response = await POST(URL.GET_ANNOUNCEMENTS, payload);
       return response;
     } catch (error) {
       const axiosError = error as CustomAxiosErrorType;

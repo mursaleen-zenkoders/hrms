@@ -11,7 +11,7 @@ const PRODUCTION_URL = process.env.NEXT_PUBLIC_API_URL as string;
 /**
  * Local URL that will be treated as global start-point and is connected to local backend or AWS Elastic API.
  */
-const LOCAL_URL = 'http://localhost:5000' as string;
+const LOCAL_URL = 'http://192.168.1.123:5000' as string;
 
 /**
  * Base URL that will be treated as global start-point.
@@ -19,12 +19,13 @@ const LOCAL_URL = 'http://localhost:5000' as string;
 export const BASE_URL = IS_LIVE ? PRODUCTION_URL : LOCAL_URL;
 
 export const URL = {
-  // ======================== User Authentication ========================
-
-  USER_LOGIN: `${BASE_URL}/auth/login`,
-
-  GET_USER: `${BASE_URL}/auth/getUser`,
   // ======================== File Upload ========================
-
   UPLOAD_PDF: (uid: string | string[]) => `${BASE_URL}/S3/fileUpload/${uid}`,
+
+  // ======================== Announcement ========================
+  GET_ANNOUNCEMENTS: `${BASE_URL}/announcement`,
+
+  GET_ANNOUNCEMENT: (id: number) => `${BASE_URL}/announcement/${id}`,
+
+  POST_ANNOUNCEMENT_ACKNOWLEDGE: `${BASE_URL}/announcement/acknowledge`,
 } as const;

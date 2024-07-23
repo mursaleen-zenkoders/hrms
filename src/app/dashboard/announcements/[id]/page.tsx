@@ -1,7 +1,5 @@
 import AnnouncementView from '@/view/announcement/single-announcement';
 
-const Page = () => {
-  return <AnnouncementView />;
-};
-
-export default Page;
+export default function Page({ params }: { params: { id: string } }) {
+  return <AnnouncementView id={Number(params.id)} />;
+}

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 
 import toDoList from '@/../public/assets/icons/To do list.svg';
@@ -10,6 +10,7 @@ interface IProps {
   date: string;
   content: string;
   day?: string;
+  isExpendAll: boolean;
 }
 
 /**
@@ -19,19 +20,25 @@ interface IProps {
  *   answer='To make a booking, simply visit our website and navigate to the booking section.'
  * />
  */
-const Accordion = ({ content: answer, date, day }: IProps) => {
-  const [isCollapse, setIsCollapse] = useState(false);
+const Accordion = ({ content: answer, date, day, isExpendAll }: IProps) => {
+  const [isCollapse, setIsCollapse] = useState(isExpendAll);
+
+  useEffect(() => {
+    setIsCollapse(isExpendAll);
+  }, [isExpendAll]);
 
   return (
-    <div
+    <button
+      onClick={() => setIsCollapse(!isCollapse)}
       className={`border rounded-lg border-light-gray overflow-hidden
          ${isCollapse ? '!border-primary min-h-[100px] max-h-fit' : 'max-h-[50px] min-h-[50px]'}
         transition-all duration-1000 ease-in-out
+        w-full
         flex flex-col gap-3 p-3
     `}
       style={{ transition: 'all 0.5s ease-in-out' }}
     >
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center w-full'>
         <div className='flex gap-3 font-medium text-base'>
           <Image
             alt=''
@@ -46,14 +53,12 @@ const Accordion = ({ content: answer, date, day }: IProps) => {
         <div className='w-5 h-5'>
           {!isCollapse ? (
             <IoIosArrowDown
-              onClick={() => setIsCollapse(!isCollapse)}
               size={20}
               color='#21AB70'
               className='cursor-pointer'
             />
           ) : (
             <IoIosArrowUp
-              onClick={() => setIsCollapse(!isCollapse)}
               size={20}
               color='#21AB70'
               className='cursor-pointer'
@@ -63,11 +68,11 @@ const Accordion = ({ content: answer, date, day }: IProps) => {
       </div>
 
       <div
-        className={`flex flex-col gap-3 transition-all duration-1000 ease-in-out ${isCollapse ? 'border-t pt-2 text-inherit' : 'text-transparent'}`}
+        className={`flex flex-col gap-3 transition-all duration-1000 ease-in-out ${isCollapse ? 'border-t pt-2 text-inherit' : 'text-transparent'} w-full `}
       >
-        <p className='text-textGray text-sm'>{answer}</p>
+        <p className='text-textGray text-sm text-start'>{answer}</p>
       </div>
-    </div>
+    </button>
   );
 };
 

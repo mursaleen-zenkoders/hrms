@@ -17,7 +17,14 @@ export function middleware(req: NextRequest) {
 
   const publicRoutes = ['/login'];
 
-  const protectedRoutes = ['/', '/dashboard'];
+  const protectedRoutes = [
+    '/',
+    '/dashboard',
+    '/dashboard/home',
+    '/dashboard/attendance',
+    '/dashboard/announcements',
+    '/dashboard/standup',
+  ];
 
   if (isToken && publicRoutes.includes(pathname)) {
     return NextResponse.redirect(new URL('/', req.url));
