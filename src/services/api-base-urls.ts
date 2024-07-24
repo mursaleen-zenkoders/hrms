@@ -23,7 +23,8 @@ export const URL = {
   UPLOAD_PDF: (uid: string | string[]) => `${BASE_URL}/S3/fileUpload/${uid}`,
 
   // ======================== Announcement ========================
-  GET_ANNOUNCEMENTS: `${BASE_URL}/announcement`,
+  GET_ANNOUNCEMENTS: (page?: number, date?: string) =>
+    `${BASE_URL}/announcement?limit=${10}&page=${page}&date=${date}`,
 
   GET_ANNOUNCEMENT: (id: number) => `${BASE_URL}/announcement/${id}`,
 

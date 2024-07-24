@@ -11,10 +11,10 @@ import { Announcement } from '@/types/types/announcement';
  *
  * @returns {Object} - React Query hook result object.
  */
-export const GetAllAnnouncementsHook = (): UseQueryResult<
-  Announcement,
-  Error
-> => {
+export const GetAllAnnouncementsHook = (
+  page?: number,
+  date?: string,
+): UseQueryResult<Announcement, Error> => {
   /**
    * Function to perform the actual API call for user login.
    *
@@ -25,7 +25,7 @@ export const GetAllAnnouncementsHook = (): UseQueryResult<
    * @throws Will throw an error if the API call fails.
    */
   const GetAllAnnouncementsFn = async (): Promise<unknown> => {
-    const response = await GET(URL.GET_ANNOUNCEMENTS);
+    const response = await GET(URL.GET_ANNOUNCEMENTS(page, date));
     return response;
   };
 

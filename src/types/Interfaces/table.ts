@@ -1,8 +1,5 @@
-import { FormikHandlers } from 'formik';
-
 export interface ITable {
   children?: React.ReactNode;
-  handleSubmit?: FormikHandlers['handleSubmit'];
   rowsPerPage?: number;
   setRowsPerPage?: React.Dispatch<React.SetStateAction<number>>;
   currentPage?: number;

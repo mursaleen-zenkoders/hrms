@@ -22,7 +22,7 @@ const AttendanceView = () => {
           rowsPerPage={limits}
           setCurrentPage={setPages}
           setRowsPerPage={setLimits}
-          rowsOption={[5, 10, 15, 20, 25, 30, 35]}
+          rowsOption={[10, 20, 30]}
         >
           <TableHeader tableHeader={tableHeader} />
           {tableBody.map((item, index) => (

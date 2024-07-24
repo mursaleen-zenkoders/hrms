@@ -14,8 +14,19 @@ import { cn } from '@/lib/utils';
 
 import { BsCalendar4Week } from 'react-icons/bs';
 
-export function DatePicker() {
+interface DatePickerProps {
+  onSelectDate?: (date: string) => void;
+}
+
+export function DatePicker({ onSelectDate }: DatePickerProps) {
   const [date, setDate] = React.useState<Date>();
+
+  const selectData = (date: Date) => {
+    const formattedDate = format(date, 'P');
+    const replacedDate = formattedDate.replace(/\//g, '-');
+    setDate(date);
+    onSelectDate && onSelectDate(replacedDate);
+  };
 
   return (
     <Popover>
@@ -38,7 +49,7 @@ export function DatePicker() {
         <Calendar
           mode='single'
           selected={date}
-          onSelect={setDate}
+          onSelect={date => selectData(date as Date)}
           initialFocus
         />
       </PopoverContent>

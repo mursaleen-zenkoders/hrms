@@ -44,7 +44,7 @@ const TableBody = ({
   return (
     <tbody>
       <tr
-        className={`h-[60px] border-b border-dark-black text-[13px] font-medium text-[#51595A] hover:bg-[#f7f7f709] relative`}
+        className={`h-[60px] border-b border-dark-black text-[13px] font-medium text-[#51595A] hover:bg-[#f7f7f709]`}
       >
         {BodyData.map((item, index) => (
           <td

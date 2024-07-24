@@ -20,7 +20,6 @@ import TableFoot from './table-foot';
  */
 const Table = ({
   children,
-  handleSubmit,
   rowsPerPage,
   setRowsPerPage,
   currentPage,
@@ -31,10 +30,6 @@ const Table = ({
 }: ITable) => {
   return (
     <div className='overflow-hidden min-h-[82dvh] flex flex-col justify-between'>
-      <form
-        onSubmit={handleSubmit}
-        className='px-6'
-      ></form>
       <div className='h-full min-h-[76dvh]'>
         <div className='w-full overflow-x-scroll xl:overflow-x-hidden'>
           <table className='w-full min-w-[1000px]'>{children}</table>
