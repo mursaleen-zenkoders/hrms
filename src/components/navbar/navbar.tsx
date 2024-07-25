@@ -43,7 +43,7 @@ const Navbar = ({
           src={data?.user?.image || ''}
           width={40}
           height={40}
-          className='rounded-full w-[34px] h-[34px] md:w-[50px] md:h-[50px]'
+          className='rounded-full w-[30px] h-[30px] md:w-[40px] md:h-[40px]'
         />
       </div>
     </CardFrame>

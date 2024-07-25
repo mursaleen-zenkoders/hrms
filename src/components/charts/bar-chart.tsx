@@ -40,7 +40,7 @@ const chartConfig = {
 
 export function BarChartComp() {
   return (
-    <CardFrameTwo className='h-full'>
+    <CardFrameTwo>
       <CardHeader>
         <CardTitle>Weekly Working Hours</CardTitle>
       </CardHeader>

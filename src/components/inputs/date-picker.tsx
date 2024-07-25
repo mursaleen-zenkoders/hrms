@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils';
 import { BsCalendar4Week } from 'react-icons/bs';
 
 interface DatePickerProps {
-  onSelectDate?: (date: string) => void;
+  onSelectDate?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export function DatePicker({ onSelectDate }: DatePickerProps) {

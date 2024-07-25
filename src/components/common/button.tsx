@@ -9,7 +9,7 @@ interface IButton {
   type?: 'submit' | 'button';
   onClick?: () => void;
   className?: string;
-  isBlack?: boolean;
+  isOutline?: boolean;
   redirectURL?: string;
   disabled?: boolean;
 }
@@ -35,7 +35,7 @@ const Button = ({
   onClick,
   type,
   className,
-  isBlack,
+  isOutline,
   redirectURL,
   disabled,
 }: IButton) => {
@@ -46,7 +46,7 @@ const Button = ({
         onClick={onClick}
         type={type}
         className={cn(
-          `${!isBlack ? 'bg-primary' : 'bg-black'}`,
+          `${!isOutline ? 'bg-primary' : 'bg-transparent border-primary border !text-primary'}`,
           'font-medium text-sm',
           'w-fit h-11 ',
           'px-6 py-2',

@@ -41,7 +41,7 @@ const CardTitle = React.forwardRef<
     )}
     {...props}
   >
-    <span className='text-transparent'>ltorem</span>
+    {/* <span className='text-transparent'>ltorem</span> */}
   </h3>
 ));
 CardTitle.displayName = 'CardTitle';
