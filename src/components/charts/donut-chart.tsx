@@ -26,7 +26,7 @@ import ChartFooter from './chart-footer';
 
 export function DonutChart() {
   return (
-    <CardFrameTwo className='h-full'>
+    <CardFrameTwo className='h-full !bg-transparent'>
       <CardHeader className='pb-0'>
         <CardTitle>Attendance</CardTitle>
         <CardDescription className='text-lg'>
@@ -59,10 +59,9 @@ export function DonutChart() {
             className='flex gap-x-5 justify-between sm:pr-5'
           >
             <ChartFooter
+              value={item.day + ' Day'}
               {...item}
-              doitSize={'12px'}
             />
-            <p>{item.day} Day</p>
           </div>
         ))}
       </CardFooter>

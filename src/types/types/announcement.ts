@@ -1,12 +1,12 @@
 export type Announcement = {
-  result: Result[];
+  result: AnnouncementT[];
   total: number;
   page: number;
   limit: number;
   totalPages: number;
 };
 
-export type Result = {
+export type AnnouncementT = {
   id: number;
   title: string;
   is_delete: boolean;

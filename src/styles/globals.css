@@ -41,9 +41,23 @@ body {
     height: 3px;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url('./../../public/assets/icons/calendar-green.svg') no-repeat;
+    padding-right: 30px;
+    width: fit-content;
+    height: 25PX;
+    background-position: center;
+    background-size: 25px;
+}
 
+input[type="date"]::-webkit-inner-spin-button {
+    background-color: #21AB70;
+}
 
-/* quill editor styling */
+/* ============== Quill Editor Styling ============== */
 .quill>* {
     border-color: inherit !important;
     color: inherit !important;

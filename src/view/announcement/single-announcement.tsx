@@ -18,6 +18,7 @@ import { GetAnnouncementHook } from '@/services/react-query-client/announcement/
 
 // Moment Library
 import moment from 'moment';
+import { BackgroundBeams } from '@/components/effects/background-beams';
 
 export default function AnnouncementView({ id }: { id: number }) {
   const { data } = GetAnnouncementHook(id);
@@ -46,6 +47,7 @@ export default function AnnouncementView({ id }: { id: number }) {
       <CardFrameTwo
         className={`h-[89%] overflow-y-auto flex flex-col justify-between gap-y-5 bg-[]`}
       >
+        <BackgroundBeams />
         <div className='space-y-5'>
           <div className='flex justify-between items-center'>
             <Image

@@ -1,9 +1,6 @@
 // Style
 import '@/styles/globals.css';
 
-// Components
-// import Navbar from '@/components/navbar/navbar';
-
 // Provider
 import SessionProvider from '@/components/provider';
 import { Providers } from '@/providers';

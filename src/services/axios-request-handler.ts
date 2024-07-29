@@ -77,6 +77,32 @@ export const PUT = async (
   });
 
 /**
+ * Performs a PATCH request.
+ *
+ * @param {string} endPoint - The URL to hit.
+ * @param {Array<unknown> | Record<string, never>} data - The request data.
+ * @param {string} token - The Authorization Token.
+ * @returns {Promise<unknown>} - A Promise resolving to the response data.
+ * @throws Will throw an error if the PUT request fails.
+ */
+export const PATCH = async (
+  endPoint: string,
+  data: Array<unknown> | Record<string, never> | unknown = {},
+): Promise<unknown> =>
+  new Promise((resolve, reject) => {
+    axiosInstance
+      .patch(endPoint, data)
+      .then(response => {
+        if (response) {
+          resolve(response.data);
+        }
+      })
+      .catch((error: Error) => {
+        reject(error);
+      });
+  });
+
+/**
  * Performs a DELETE request.
  *
  * @param {string} endPoint - The URL to hit.

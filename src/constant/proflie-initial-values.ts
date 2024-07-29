@@ -1,21 +1,30 @@
-export const initialValues = {
+import { InitialValuesT } from '@/types/types/profile';
+
+export const initialValues: InitialValuesT = {
+  // Personal Details
   firstName: '',
   lastName: '',
-  email: '',
+  personalEmail: '',
   phone: null,
+
+  // Address
   address: '',
   city: '',
   state: '',
   zip: null,
   country: '',
-  gender: '',
+
+  // Date of Birth
   dob: '',
+
+  // Other Details
+  gender: '',
   education: '',
   experience: '',
-  skills: '',
   about: '',
-  profilePicture: '',
   nic: null,
+  department: '',
+  designation: '',
 };
 
 export const personalDetails = [
@@ -28,38 +37,13 @@ export const personalDetails = [
     name: 'lastName',
   },
   {
-    label: 'Email',
-    name: 'email',
+    label: 'Personal Email',
+    name: 'personalEmail',
   },
   {
     label: 'Phone Number',
     name: 'phone',
     type: 'number',
-  },
-  {
-    label: 'Gender',
-    name: 'gender',
-  },
-  {
-    label: 'Date of Birth',
-    name: 'dob',
-    type: 'date',
-  },
-  {
-    label: 'Education',
-    name: 'education',
-  },
-  {
-    label: 'Experience',
-    name: 'experience',
-  },
-  {
-    label: 'Skills',
-    name: 'skills',
-  },
-  {
-    label: 'About',
-    name: 'about',
   },
   {
     label: 'NIC Number',
@@ -89,5 +73,38 @@ export const address = [
   {
     label: 'Country',
     name: 'country',
+  },
+];
+
+export const othersDetails = [
+  {
+    label: 'Department',
+    name: 'department',
+  },
+  {
+    label: 'Designation',
+    name: 'designation',
+  },
+  {
+    label: 'Gender',
+    name: 'gender',
+  },
+  {
+    label: 'Education',
+    name: 'education',
+  },
+  {
+    label: 'Experience',
+    name: 'experience',
+  },
+  {
+    label: 'About',
+    name: 'about',
+    type: 'textarea',
+  },
+  {
+    label: 'Date of Birth',
+    name: 'dob',
+    type: 'number',
   },
 ];

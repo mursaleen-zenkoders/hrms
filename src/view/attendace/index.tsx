@@ -5,7 +5,7 @@ import Table from '@/components/table/table';
 import TableBody from '@/components/table/table-body';
 import TableHeader from '@/components/table/table-head';
 import { tableBody, tableHeader } from '@/constant/dummy-data/table';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const AttendanceView = () => {
   const [limits, setLimits] = useState<number>(5);

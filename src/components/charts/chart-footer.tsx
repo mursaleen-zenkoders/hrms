@@ -3,17 +3,23 @@ import React from 'react';
 interface ChartFooterProps {
   label: string;
   color: string;
-  doitSize: '12px' | '8px';
+  value?: string;
 }
 
-const ChartFooter = ({ label, color, doitSize }: ChartFooterProps) => {
+const ChartFooter = ({ label, color, value }: ChartFooterProps) => {
   return (
-    <div className='flex gap-x-2 items-center'>
-      <div
-        className='rounded-full'
-        style={{ backgroundColor: color, width: doitSize, height: doitSize }}
-      />
-      <p>{label}</p>
+    <div
+      className='flex gap-x-2 items-center justify-between w-full border-b pb-1 border-dashed'
+      style={{ borderColor: color }}
+    >
+      <div className='flex items-center gap-x-2'>
+        <div
+          className='h-5 w-1 rounded-md'
+          style={{ backgroundColor: color }}
+        />
+        <p>{label}</p>
+      </div>
+      <p className='text-white text-xs'>{value}</p>
     </div>
   );
 };

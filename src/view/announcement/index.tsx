@@ -6,8 +6,6 @@ import Pagination from '@/components/common/pagination';
 import SkeletonLoader from '@/components/common/skeleton';
 import { DatePicker } from '@/components/inputs/date-picker';
 import Navbar from '@/components/navbar/navbar';
-
-// Service
 import { GetAllAnnouncementsHook } from '@/services/react-query-client/announcement/get-announcements';
 
 // React Hook

@@ -40,7 +40,7 @@ const chartConfig = {
 
 export function BarChartComp() {
   return (
-    <CardFrameTwo>
+    <CardFrameTwo className='h-full !bg-transparent'>
       <CardHeader>
         <CardTitle>Weekly Working Hours</CardTitle>
       </CardHeader>
@@ -79,13 +79,11 @@ export function BarChartComp() {
         <ChartFooter
           color='#21AB70'
           label='Office Hours'
-          doitSize='8px'
         />
 
         <ChartFooter
           color='#9EA9AA'
           label='Working Hours'
-          doitSize='8px'
         />
       </CardFooter>
     </CardFrameTwo>

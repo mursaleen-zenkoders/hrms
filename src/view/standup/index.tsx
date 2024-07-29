@@ -2,15 +2,15 @@
 // Component Imports
 import CardFrameTwo from '@/components/card/card-frame-two';
 import Accordion from '@/components/common/accordion';
+import Button from '@/components/common/button';
 import { DatePicker } from '@/components/inputs/date-picker';
 import SearchInput from '@/components/inputs/searchbar';
-import Navbar from '@/components/navbar/navbar';
-import Button from '@/components/common/button';
 import TextEditor from '@/components/inputs/text-editor';
+import Navbar from '@/components/navbar/navbar';
 
 // REACT & NEXT IMPORTS
-import React, { useState } from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
 
 // ICONS
 import toDoList from '@/../public/assets/icons/To do list.svg';
@@ -19,9 +19,12 @@ import toDoList from '@/../public/assets/icons/To do list.svg';
 import { accordionData } from '@/constant/dummy-data/accordion-data';
 
 // FORM IMPORTS
+// import { GetAllStandupHook } from '@/services/react-query-client/standup/get-all-standup';
 import { useFormik } from 'formik';
 
 const StandUpView = () => {
+  // const { data } = GetAllStandupHook();
+
   const formik = useFormik({
     initialValues: {
       summaryOrTask: '',

@@ -34,8 +34,9 @@ export function DatePicker({ onSelectDate }: DatePickerProps) {
         <Button
           variant={'outline'}
           className={cn(
-            'w-full max-w-[320px] flex justify-between text-left font-normal border-gray-50',
+            'w-full flex justify-between text-left font-normal border-gray-50',
             !date && 'text-muted-foreground',
+            'sm:max-w-[400px]',
           )}
         >
           {date ? format(date, 'PPP') : <span>Pick a date</span>}
